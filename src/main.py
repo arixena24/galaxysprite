@@ -24,9 +24,56 @@ class Dionysus():
         # plt.imshow()
         # plt.colorbar()
         # return np.abs(WNoise)
+        
+    
+    def stack(arrays, N, figname = ""):
+        
+        "This functon takes in the data given and returns every given N number of plots" 
+        
+        for N in range(arrays):
+            figs = arrays[N]
+            
+            plt.imshow(fig)
+            plt.colorbar()
+            plt.title(figname)
+            plt.savefig(figname) 
+            
+            
+            
+    def DEC_RA(plot, dec, ra, radtype = "radian", figname = "Cutout"): 
+       
+        "function to cut out a slice of an object given a particular dec and ra" 
+       
+        #makes sure that ra and dec are in radian
+        if radtype = "radian": 
+            ras = ra
+            decs = dec
+         
+        else: 
+            ras = np.deg2rad(ra)
+            decs = np.deg2rad(dec)
+        
+        coordinates = (ras, decs)
+        
+        
+        #set up the size of the box
+        ras_start = max(ras - N //2, 0)
+        ras_end = min(ras + N // 2)
+        dec_start = max(decs - N // 2)
+        dec_end = min(decs + N // 2 + 1)
+        
+        ras_region = [ras_start:ras_end]
+        dec_region = [dec_start:dec_end]
 
-x
-    # image confirmation
+        # Cut out the region from the imshow array
+        region = imshow_array[dec_region, ras_region]
+
+        #plots the cutout
+        plt.imshow(region)
+        plt.title(figname)
+        plt.colorbar()
+
+     
     
     # img to arrary
 
