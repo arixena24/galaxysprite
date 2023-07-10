@@ -40,12 +40,12 @@ class Dionysus():
             
             
             
-    def DEC_RA(plot, dec, ra, radtype = "radian", figname = "Cutout"): 
+    def DEC_RA(plot, dec, ra, radtype ='radian', figname = "Cutout"): 
        
         "function to cut out a slice of an object given a particular dec and ra" 
        
         #makes sure that ra and dec are in radian
-        if radtype = "radian": 
+        if radtype == 'radian': 
             ras = ra
             decs = dec
          
@@ -62,8 +62,8 @@ class Dionysus():
         dec_start = max(decs - N // 2)
         dec_end = min(decs + N // 2 + 1)
         
-        ras_region = [ras_start:ras_end]
-        dec_region = [dec_start:dec_end]
+        ras_region = ras[ras_start:ras_end]
+        dec_region = dec[dec_start:dec_end]
 
         # Cut out the region from the imshow array
         region = imshow_array[dec_region, ras_region]
@@ -72,10 +72,8 @@ class Dionysus():
         plt.imshow(region)
         plt.title(figname)
         plt.colorbar()
-
-     
-    
-    # img to arrary
+        
+          
 
     # array to video
 
