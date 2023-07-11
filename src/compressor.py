@@ -1,9 +1,26 @@
-def compress_video(self, path_output):
-    if filename.endswith('.mp4'):
-        input_vid = os.path.join(path_output, self)
-        output_vid = os.path.join(path_output, f'compressed_{self}' ) #change to correct filename of resulting movie
+import os
+import ffmpeg
+import subprocess
 
-        ffmpeg_cmd = f'ffmpeg -i {input_vid} -c:v libx265 -c:a copy -crf 24 {output_vid}'
-        subprocess.run(ffmpeg_cmd, shell=True)
+def compress_video(video_path, size_goal_KB):
+    filename, extension = os.path.splitext(video_path)
+    extension = '.mp4'
+
+    probe = ffmpeg.probe(video_path)
+    duration = float(probe['format']['duration'])
+    target_total_bitrate = (size_goal_KB * 1024 * 8) / (1.073741824 * duration)
+    video_bitrate = target_total_bitrate
+
+    if filename.endswith('.mp4'):
+        i = ffmpeg.input(video_path)
+        output_vid = os.path.join(f'{filename}_compressed' ,{extension}) #change to correct filename of resulting movie
+        ffmpeg.output(i, output_vid,
+                          **{'c:v': 'libx264', 'b:v': video_bitrate}
+                          ).overwrite_output().run()
     return output_vid
+
+
+
+
+# Simplified version and explanation at: https://stackoverflow.com/a/64439347/12866353
 
