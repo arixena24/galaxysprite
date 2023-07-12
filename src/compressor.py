@@ -3,6 +3,15 @@ import ffmpeg
 import subprocess
 
 def compress_video(video_path, size_goal_KB):
+    """Compress resulting video to deisred file size in KB. 
+
+    Args:
+        video_path (str): path to video or animation created in earlier function. 
+        size_goal_KB (_type_): specified file size upper limit. 
+
+    Returns:
+        output_vid: location of outputted compressed video. 
+    """
     filename, extension = os.path.splitext(video_path)
     extension = '.mp4'
 
