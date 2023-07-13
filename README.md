@@ -22,3 +22,5 @@ steller evoltion
 function that plots the galaxy's state with evolution of redshift 
 
 [![Code/Astro](https://img.shields.io/badge/Code_Astro-purple)
+
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.8145254.svg)](https://doi.org/10.5281/zenodo.8145254)
