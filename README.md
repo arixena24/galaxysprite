@@ -1,4 +1,4 @@
-# Dionysus
+# galaxysprite
 
 This package takes in any data type and turns it into a movie. Currently, we have used it with simulated galaxy data. 
 
