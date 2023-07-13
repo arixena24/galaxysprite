@@ -1,0 +1,6 @@
+README.md
+setup.py
+galaxysprite.egg-info/PKG-INFO
+galaxysprite.egg-info/SOURCES.txt
+galaxysprite.egg-info/dependency_links.txt
+galaxysprite.egg-info/top_level.txt
