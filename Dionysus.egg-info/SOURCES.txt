@@ -1,0 +1,11 @@
+.gitignore
+README.md
+__init__.py
+requirements.txt
+setup.py
+Dionysus.egg-info/PKG-INFO
+Dionysus.egg-info/SOURCES.txt
+Dionysus.egg-info/dependency_links.txt
+Dionysus.egg-info/top_level.txt
+src/galactic.py
+src/main.py
