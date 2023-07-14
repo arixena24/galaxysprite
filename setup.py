@@ -1,5 +1,9 @@
 from setuptools import setup, find_packages, Extension
 
+import numpy, sys
+import re
+
+
 # auto-updating version code stolen from RadVel
 def get_property(prop, project):
     result = re.search(
