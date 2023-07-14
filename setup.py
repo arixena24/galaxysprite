@@ -1,5 +1,12 @@
 from setuptools import setup, find_packages, Extension
 
+# auto-updating version code stolen from RadVel
+def get_property(prop, project):
+    result = re.search(
+        r'{}\s*=\s*[\'"]([^\'"]*)[\'"]'.format(prop),
+        open(project + "/__init__.py").read(),
+    )
+    return result.group(1)
 
 def get_requires():
     reqs = []
