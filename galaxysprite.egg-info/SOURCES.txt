@@ -1,5 +1,6 @@
 README.md
 setup.py
+galaxysprite/__init__.py
 galaxysprite.egg-info/PKG-INFO
 galaxysprite.egg-info/SOURCES.txt
 galaxysprite.egg-info/dependency_links.txt

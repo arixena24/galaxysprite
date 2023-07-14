@@ -1,3 +1,24 @@
-from setuptools import setup, find_packages
+from setuptools import setup, find_packages, Extension
 
-setup(name = "galaxysprite", version = "0.0.2", author = "Ariel Elizabeth Eunhee", description = "make gifs!", packages = find_packages())
+
+def get_requires():
+    reqs = []
+    for line in open("requirements.txt", "r").readlines():
+        reqs.append(line)
+    return reqs
+
+
+
+setup(
+    name="galaxysprite",
+    version=get_property("__version__", "galaxysprite"),
+    description="galaxysprite: make gifs!",
+    url="https://github.com/arixena24/galaxysprite",
+    author="Ariel Elizabeth Eunhee",
+    author_email="",
+    license=" ",
+    packages=find_packages(),
+    install_requires=get_requires(),
+    include_package_data=True
+)
+
